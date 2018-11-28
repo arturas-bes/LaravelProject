@@ -161,7 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        Fadion\Maneuver\ManeuverServiceProvider::class, //deployment tool
         /*
          * Package Service Providers...
          */
