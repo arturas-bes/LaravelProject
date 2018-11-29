@@ -14,7 +14,11 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <span>You are logged in!</span>
+                    <div class="col-xs-6"><span style="font-weight:700;">Name: </span>{{ Auth::user()->name }}</div>
+                     <div class="col-xs-6"><span style="font-weight:700;">Email: </span>{{ Auth::user()->email }}</div>
+                     <div class="col-xs-6"><span style="font-weight:700;">Phone: </span>{{ Auth::user()->phone }}</div>
+                       <div class="col-xs-6"><span style="font-weight:700;">Password SSH: </span>{{ Auth::user()->password }}</div>
                 </div>
             </div>
         </div>

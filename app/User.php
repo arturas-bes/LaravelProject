@@ -5,16 +5,23 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+// These two come from Media Library
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\Models\Media;
-
+use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 
 class User extends Authenticatable implements HasMedia
 {
-    use Notifiable;
-     use HasMediaTrait;
+        use Notifiable;
+        use HasMediaTrait;
 
+      public function registerMediaConversions(Media $media = null)
+    {
+        $this->addMediaConversion('thumb')
+            ->width(50)
+            ->height(50);
+    }
     /**
      * The attributes that are mass assignable.
      *
@@ -32,10 +39,4 @@ class User extends Authenticatable implements HasMedia
     protected $hidden = [
         'password', 'remember_token',
     ];
-     public function registerMediaConversions(Media $media = null)
-    {
-        $this->addMediaConversion('thumb')
-            ->width(60)
-            ->height(60);
-    }
 }
