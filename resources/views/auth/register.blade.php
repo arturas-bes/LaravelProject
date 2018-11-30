@@ -73,13 +73,7 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="avatar" class="col-md-4 col-form-label text-md-right">{{ __('Avatar (optional)') }}</label>
-
-                            <div class="col-md-6">
-                             <input type="file" name="avatar">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            </div>
+                        
                         </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
